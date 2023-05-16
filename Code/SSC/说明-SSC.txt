@@ -1,0 +1,22 @@
+代码来自http://www.vision.jhu.edu/code/，文件为：SSC_ADMM_v1.1.zip
+
+在其上面进行部分修改：
+1. 源代码调用了自己写的谱聚类，被我删掉，输出表示矩阵CMat和亲和矩阵CKSym；
+2. 删去输入参数数量判断（无影响，仅仅为了代码简洁）；
+3. 注释掉了中间的输出信息；
+
+调用方法：
+% Input: 
+%       X: 数据, size(X)=n*d;
+%       r: 使用PCA进行映射降维后的维度, 若r=0, 则不降维(默认0);
+%       affine: bool, 是否进行仿射变换(意义暂时未懂，默认false);
+%       alpha: 算法正则化参数（默认20）;
+%       outlier: bool, 是否添加离群项约束(对结果有较大影响，默认false);
+%       rho: 构建邻接矩阵时的一个参数, 意义暂时未懂(对结果影响不大，默认1);
+% Output:
+%       CMat: SSC得到的稀疏系数矩阵（表示矩阵）, size(CMat)=n*n;
+%       CKSym：SSC自己由表示矩阵得到的亲和矩阵；
+
+
+注意：
+1. 虽然SSC意义上只有alpha一个正则化参数，但实际affine和outlier的影响也挺大的，而参数r和rho一般不用管，具体可以看看run_SSC_Faces.m和run_SSC_MS.m里面的参数设定；

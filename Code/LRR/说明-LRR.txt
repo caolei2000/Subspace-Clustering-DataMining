@@ -1,0 +1,5 @@
+来自LRR源代码：https://sites.google.com/site/guangcanliu/?pli=1
+下面链接中 motion segmentation and face clustering by LRR
+
+对其中代码进行了整理，只是方便调用，没有改变实质。
+
